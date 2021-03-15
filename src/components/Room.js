@@ -26,6 +26,5 @@ Room.PropTypes = {
         slug:PropTypes.string.isRequired,
         images:PropTypes.arrayOf(PropTypes.string).isRequired,
         price:PropTypes.number.isRequired
-
     })
 }

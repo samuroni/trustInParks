@@ -5,7 +5,7 @@ const RoomContext = React.createContext();
 
 class RoomProvider extends Component {
     state = {
-        roorms:[],
+        rooms:[],
         sorteRooms:[],
         featuredRooms:[],
         loading: true
@@ -36,12 +36,19 @@ class RoomProvider extends Component {
         return tempItems;
     }
 
-
+    getRoom = (slug) => {
+        let tempRooms = [...this.state.rooms];
+        const room = tempRooms.find((room) => room.slug === slug);
+        return room;
+    };
 
 
     render() {
         return (
-            <RoomContext.Provider value= {{...this.state}}>
+            <RoomContext.Provider value= {{
+                ...this.state, 
+                getRoom:this.getRoom
+                }}>
                 {this.props.children}
             </RoomContext.Provider>
         )

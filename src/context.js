@@ -17,7 +17,7 @@ class RoomProvider extends Component {
         maxPrice:0,
         minSize:0,
         maxSize:0,
-        breakfast:false,
+        foodAndDrink:false,
         pets:false
     };
 
@@ -26,8 +26,8 @@ class RoomProvider extends Component {
     getData = async () => {
         try {
             let response = await Client.getEntries({
-                content_type: 'beachResortRooms',
-                order: 'fields.price'
+                content_type: 'parks'
+                // order: 'fields.price'
             });
             let rooms = this.formatData(response.items);
             let featuredRooms = rooms.filter(room => room.featured === true);
@@ -90,7 +90,7 @@ class RoomProvider extends Component {
             price,
             minSize,
             maxSize,
-            breakfast,
+            foodAndDrink,
             pets
         } = this.state;
 // all the rooms
@@ -105,16 +105,16 @@ class RoomProvider extends Component {
         }
 // filter by capacity
 
-        if(capacity !== 1){
-            tempRooms = tempRooms.filter(room => room.capacity >= capacity)
-        }
+        // if(capacity !== 1){
+        //     tempRooms = tempRooms.filter(room => room.capacity >= capacity)
+        // }
 // filter by price
         tempRooms = tempRooms.filter(room => room.price <= price)
 // filter by size
-        tempRooms = tempRooms.filter(room => room.size >= minSize && room.size <= maxSize)
-// filter by breakfast
-        if(breakfast){
-            tempRooms = tempRooms.filter(room => room.breakfast === true)
+        // tempRooms = tempRooms.filter(room => room.size >= minSize && room.size <= maxSize)
+// filter by foodAndDrink
+        if(foodAndDrink){
+            tempRooms = tempRooms.filter(room => room.foodAndDrink === true)
         };
 // filter by pets
         if(pets){

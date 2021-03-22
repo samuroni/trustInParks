@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import logo from "../images/logo.svg"
+import logo from "../images/navbar-logo.png"
 import { FaAlignRight } from "react-icons/fa"
 import {Link} from "react-router-dom"
 
@@ -16,8 +16,8 @@ const Navbar = () => {
             <nav className="navbar">
                 <div className="nav-center">
                     <div className="nav-header">
-                         <Link to="/">
-                             <img src={logo} alt="Beach Resort"></img>
+                         <Link to="/" className="nav-link-parks">
+                             <img src={logo} alt="Beach Resort" className="nav-logo-parks"></img>
                          </Link>
                         <button type="button" className="nav-btn" onClick={handleToggle}>
                              <FaAlignRight className="nav-icon" />                         
@@ -28,7 +28,7 @@ const Navbar = () => {
                             <Link to="/">Home</Link>
                         </li>
                         <li>
-                            <Link to="/rooms">Rooms</Link>
+                            <Link to="/rooms">Parks</Link>
                         </li>
                     </ul>
                 </div>

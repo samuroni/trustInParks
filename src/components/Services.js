@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import Title from './Title'
-import {FaCocktail, FaHiking, FaShuttleVan, FaBeer} from 'react-icons/fa'
+import {FaCocktail, FaHiking, FaShuttleVan, FaBinoculars} from 'react-icons/fa'
 
 export default class Services extends Component {
 
@@ -8,7 +8,7 @@ export default class Services extends Component {
         services:[
             {
                 icon:<FaCocktail />,
-                title: "Free Cocktails",
+                title: "Food and Drink",
                 info: " is simply dummy text of the printing and typesetting industry."
             },
             {
@@ -18,12 +18,12 @@ export default class Services extends Component {
             },
             {
                 icon:<FaShuttleVan />,
-                title: "Free Shuttle",
+                title: "Car Park",
                 info: " is simply dummy text of the printing and typesetting industry."
             },
             {
-                icon:<FaBeer />,
-                title: "Strongest Beer",
+                icon:<FaBinoculars />,
+                title: "Bird-Watching",
                 info: " is simply dummy text of the printing and typesetting industry."
             }
         ]
@@ -32,7 +32,7 @@ export default class Services extends Component {
     render() {
         return (
             <section className="services">
-                <Title title="Services"/>
+                <Title title="Discover activities"/>
                 <div className="services-center">
                     {this.state.services.map((item, index) => {
                         return <article key={index} className="service">

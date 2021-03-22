@@ -9,8 +9,8 @@ export default function Home() {
     return (
         <>
             <Hero> 
-                <Banner title="Luxorious Rooms" subtitle="Deluxe rooms starting at £299">
-                    <Link to="./rooms" className="btn-primary">Our Rooms</Link>
+                <Banner title="Discover your parks" subtitle="visit all the parks around you">
+                    <Link to="./rooms" className="btn-primary">see parks</Link>
                 </Banner>
             </Hero>
             <Services />

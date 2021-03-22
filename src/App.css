@@ -4,7 +4,7 @@
   box-sizing: border-box;
 }
 :root {
-  --primaryColor: #af9a7d;
+  --primaryColor: rgb(1, 165, 1);
   --mainWhite: #fff;
   --offWhite: #f7f7f7;
   --mainBlack: #222;
@@ -67,7 +67,7 @@ h6 {
 }
 .btn-primary:hover {
   background: transparent;
-  color: var(--primaryColor);
+  color: var(--mainWhite);
 }
 .loading {
   text-transform: capitalize;
@@ -100,6 +100,7 @@ h6 {
 .nav-header {
   display: flex;
   justify-content: space-between;
+  height: 50px;
 }
 .nav-btn {
   background: transparent;
@@ -110,6 +111,9 @@ h6 {
 .nav-icon {
   font-size: 1.5rem;
   color: var(--primaryColor);
+}
+.nav-logo-parks {
+  height: 100%;
 }
 .nav-links {
   height: 0;
@@ -159,7 +163,7 @@ h6 {
 .defaultHero,
 .roomsHero {
   min-height: calc(100vh - 66px);
-  background: url("./images/defaultBcg.jpeg") center/cover no-repeat;
+  background: url("./images/home-img.jpg") center/cover no-repeat;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -172,7 +176,7 @@ h6 {
 /* Banner */
 .banner {
   display: inline-block;
-  background: rgba(0, 0, 0, 0.5);
+  background: rgba(0, 0, 0, 0.4);
   color: var(--mainWhite);
   padding: 2rem 1rem;
   text-align: center;
@@ -233,7 +237,7 @@ h6 {
   padding: 5rem 0;
 }
 .services {
-  background: var(--darkGrey);
+  background: var(--mainGrey);
   text-align: center;
 }
 .services-center {
@@ -318,7 +322,7 @@ h6 {
   position: absolute;
   top: 0;
   left: 0;
-  background: rgba(0, 0, 0, 0.8);
+  background:var(--primaryColor);
   color: var(--mainWhite);
   padding: 0.3rem 0.6rem 0.5rem;
   border-bottom-right-radius: 1rem;
@@ -352,7 +356,8 @@ h6 {
   transform: translate(-50%, -50%) scale(1);
 }
 .room-info {
-  background: var(--darkGrey);
+  background: var(--primaryColor);
+  color: var(--mainWhite);
   text-transform: capitalize;
   padding: 0.5rem 0;
   text-align: center;

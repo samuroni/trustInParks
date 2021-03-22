@@ -23,7 +23,7 @@ const {
     maxPrice,
     minSize,
     maxSize,
-    breakfast,
+    foodAndDrink,
     pets
 } = context;
 
@@ -53,7 +53,7 @@ people = people.map((item, index) => {
             <form className='filter-form'>
                 {/* select type */}
                 <div className='form-group'>
-                    <label htmlFor='type'>room type</label>
+                    <label htmlFor='type'>park type</label>
                     <select 
                         name='type' 
                         id='type' 
@@ -66,7 +66,7 @@ people = people.map((item, index) => {
                 </div>
                 {/* end of select type */}
                  {/* guests */}
-                 <div className='form-group'>
+                 {/* <div className='form-group'>
                     <label htmlFor='capacity'>guests</label>
                     <select 
                         name='capacity' 
@@ -77,12 +77,12 @@ people = people.map((item, index) => {
                     >
                     {people}
                     </select>
-                </div>
+                </div> */}
                 {/* end of guests */}
                 {/* price range */}
                 <div className='form-group'>
                     <label htmlFor='price'>
-                        room price ${price}
+                        car park price ${price}
                     </label>
                     <input 
                         type='range' 
@@ -97,9 +97,9 @@ people = people.map((item, index) => {
                 </div>
                 {/* end of price range */}
                 {/* room size */}
-                <div className='form-group'>
+                {/* <div className='form-group'>
                     <label htmlFor='size'>
-                        room size
+                        park size
                     </label>
                     <div className='size-inputs'>
                         <input 
@@ -119,14 +119,14 @@ people = people.map((item, index) => {
                             className='size-input'>
                         </input>
                     </div>
-                </div>
+                </div> */}
                 {/* end of room size */}
                 {/* extras */}
                 <div className='form-group'>
                     <div className='single-extra'>
-                        <input type='checkbox' name='breakfast' id='breakfast' checked={breakfast} onChange={handleChange}></input>
-                        <label htmlFor='breakfast'>
-                            breakfast
+                        <input type='checkbox' name='foodAndDrink' id='foodAndDrink' checked={foodAndDrink} onChange={handleChange}></input>
+                        <label htmlFor='foodAndDrink'>
+                        food facilities
                         </label>
                     </div>
                     <div className='single-extra'>

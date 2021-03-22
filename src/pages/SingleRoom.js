@@ -30,23 +30,23 @@ export default class SingleRoom extends Component {
         
         if(!room){
             return <div className='error'>
-                <h3>No such room could be find - loading</h3>
+                <h3>No such park could be found - loading</h3>
                 <Link to='/rooms' className='btn-primary'>
-                    back to rooms
+                    back to parks
                 </Link>
             </div>
         } 
 
-        const {name, description, capacity, size, price, extras, breakfast,pets, images} = room
+        const {name, description, capacity, size, price, extras, foodAndDrink,pets, images} = room
 
         const [mainImg, ...defaultImg] = images;
 
         return (
             <>
                 <StyledHero img={mainImg || this.state.defaultBcg}>
-                    <Banner title={`${name} room`}>
+                    <Banner title={`${name}`}>
                         <Link to='/rooms' className='btn-primary'>
-                            back to rooms
+                            back to parks
                         </Link>
                     </Banner>
                 </StyledHero>
@@ -63,10 +63,8 @@ export default class SingleRoom extends Component {
                         </article>
                         <article className='info'>
                             <h3>info</h3>
-                            <h6>price: ${price}</h6>
-                            <h6>size: {size} SQFT</h6>
-                            <h6>max capacity: {capacity} {capacity > 1? 'people' : 'person' }</h6>
-                            <h6>{breakfast && 'free breakfast included'} </h6>
+                            <h6>car park price: £{price}/hour</h6>
+                            <h6>{foodAndDrink && 'bar/restaurants/pubs available'} </h6>
                             <h6>{pets? 'pets allowed': 'pets not allowed'}</h6>                            
                         </article>
                     </div>

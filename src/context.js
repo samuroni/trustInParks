@@ -2,13 +2,13 @@ import React, { Component } from 'react'
 // import items from './data' dati locali sostituiti da contentful
 import Client from './Contentful'
 
-const RoomContext = React.createContext();
+const ParkContext = React.createContext();
 
-class RoomProvider extends Component {
+class ParkProvider extends Component {
     state = {
         parks:[],
-        sortedRooms:[],
-        featuredRooms:[],
+        sortedParks:[],
+        featuredParks:[],
         loading: true,
         type:'all',
         capacity:1,
@@ -30,14 +30,14 @@ class RoomProvider extends Component {
                 // order: 'fields.price'
             });
             let parks = this.formatData(response.items);
-            let featuredRooms = parks.filter(park => park.featured === true);
+            let featuredParks = parks.filter(park => park.featured === true);
             let maxPrice = Math.max(...parks.map(item => item.price));
             let maxSize = Math.max(...parks.map(item => item.size));
         
             this.setState({
                 parks, 
-                featuredRooms, 
-                sortedRooms:parks, 
+                featuredParks, 
+                sortedParks:parks, 
                 loading:false,
                 maxSize,
                 price: maxPrice,
@@ -59,16 +59,16 @@ class RoomProvider extends Component {
             let id = item.sys.id;
             let images = item.fields.images.map(image => image.fields.file.url);
 
-            let room = {...item.fields, images, id}  
-            return room;
+            let park = {...item.fields, images, id}  
+            return park;
         })
         return tempItems;
     }
 
-    getRoom = slug => {
-        let tempRooms = [...this.state.parks];
-        const room = tempRooms.find(room => room.slug === slug);
-        return room;
+    getPark = slug => {
+        let tempParks = [...this.state.parks];
+        const park = tempParks.find(park => park.slug === slug);
+        return park;
     };
 
     handleChange = event => {
@@ -78,11 +78,11 @@ class RoomProvider extends Component {
         
         this.setState({
             [name]:value
-        }, this.filterRooms);
+        }, this.filterParks);
         
     }
 
-    filterRooms = () => {
+    filterParks = () => {
         let {
             parks,
             type,
@@ -93,61 +93,61 @@ class RoomProvider extends Component {
             foodAndDrink,
             pets
         } = this.state;
-// all the rooms
-        let tempRooms= [...parks];
+// all the parks
+        let tempParks= [...parks];
 // transform value
         capacity = parseInt(capacity);
         price = parseInt(price);
 
 // filter by type
         if (type !== 'all'){
-            tempRooms = tempRooms.filter(room => room.type === type)
+            tempParks = tempParks.filter(park => park.type === type)
         }
 // filter by capacity
 
         // if(capacity !== 1){
-        //     tempRooms = tempRooms.filter(room => room.capacity >= capacity)
+        //     tempParks = tempParks.filter(park => park.capacity >= capacity)
         // }
 // filter by price
-        tempRooms = tempRooms.filter(room => room.price <= price)
+        tempParks = tempParks.filter(park => park.price <= price)
 // filter by size
-        // tempRooms = tempRooms.filter(room => room.size >= minSize && room.size <= maxSize)
+        // tempParks = tempParks.filter(park => park.size >= minSize && park.size <= maxSize)
 // filter by foodAndDrink
         if(foodAndDrink){
-            tempRooms = tempRooms.filter(room => room.foodAndDrink === true)
+            tempParks = tempParks.filter(park => park.foodAndDrink === true)
         };
 // filter by pets
         if(pets){
-            tempRooms = tempRooms.filter(room => room.pets === true)
+            tempParks = tempParks.filter(park => park.pets === true)
         };
 // change state
         this.setState({
-            sortedRooms:tempRooms
+            sortedParks:tempParks
         })
     }
 
 
     render() {
         return (
-            <RoomContext.Provider value= {{
+            <ParkContext.Provider value= {{
                 ...this.state, 
-                getRoom: this.getRoom,
+                getPark: this.getPark,
                 handleChange: this.handleChange
                 }}>
                 {this.props.children}
-            </RoomContext.Provider>
+            </ParkContext.Provider>
         )
     }
 }
 
-const RoomConsumer = RoomContext.Consumer;
+const ParkConsumer = ParkContext.Consumer;
 
-export function withRoomConsumer(Component){
+export function withParkConsumer(Component){
     return function ConsumerWrapper(props){
-        return <RoomConsumer>
+        return <ParkConsumer>
             {value => <Component {...props} context={value}/>} 
-        </RoomConsumer>
+        </ParkConsumer>
     }
 } 
 
-export {RoomProvider, RoomConsumer, RoomContext}
+export {ParkProvider, ParkConsumer, ParkContext}

@@ -4,16 +4,16 @@ import ReactDOM from 'react-dom';
 import {BrowserRouter as Router} from "react-router-dom"
 import App from './App';
 import reportWebVitals from './reportWebVitals';
-import {RoomProvider} from './context'
+import {ParkProvider} from './context'
 
 ReactDOM.render(
-  <RoomProvider>
+  <ParkProvider>
     <React.StrictMode>
       <Router>
         <App />
       </Router>
     </React.StrictMode>
-  </RoomProvider>,
+  </ParkProvider>,
   document.getElementById('root')
 );
 

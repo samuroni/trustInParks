@@ -1,7 +1,7 @@
 import React from 'react'
-import Room from './Room'
+import Park from './Park'
 
-export default function RoomList({parks}) {
+export default function ParkList({parks}) {
     if(parks.length === 0){
         return (
         <div className='empty-search'>
@@ -13,7 +13,7 @@ export default function RoomList({parks}) {
         <section className='roomslist'>
             <div className='roomslist-center'>
                 {parks.map(item => {
-                    return <Room key={item.id} room={item} />;
+                    return <Park key={item.id} park={item} />;
                 })}                
             </div>
         </section>

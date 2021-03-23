@@ -3,7 +3,7 @@ import './App.css';
 
 import Home from "./pages/Home"
 import Parks from "./pages/Parks"
-import SingleRoom from "./pages/SingleRoom"
+import SinglePark from "./pages/SinglePark"
 import Error from "./pages/Error"
 import Navbar from "./components/Navbar"
 import {Route, Switch} from "react-router-dom"
@@ -17,7 +17,7 @@ function App() {
     <Switch>
       <Route exact path="/" component={Home}/>
       <Route exact path="/parks/" component={Parks}/>
-      <Route exact path="/parks/:slug" component={SingleRoom}/>
+      <Route exact path="/parks/:slug" component={SinglePark}/>
       <Route component={Error}/>
     </Switch>
     </>

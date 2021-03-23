@@ -2,7 +2,7 @@ import React from 'react'
 import Hero from '../components/Hero'
 import Banner from '../components/Banner'
 import {Link} from 'react-router-dom'
-import RoomContainer from '../components/RoomContainer'
+import ParkContainer from '../components/ParkContainer'
 
 
 export default function Parks() {
@@ -14,7 +14,7 @@ export default function Parks() {
             </Banner>
         </Hero>
 
-        <RoomContainer />
+        <ParkContainer />
         </>
     )
 }

@@ -1,21 +1,21 @@
 import React from 'react'
-import RoomFilter from './RoomFilter'
-import RoomList from './RoomList'
-import {withRoomConsumer} from '../context'
+import ParkFilter from './ParkFilter'
+import ParkList from './ParkList'
+import {withParkConsumer} from '../context'
 import Loading from './Loading'
 
-function RoomContainer({context}){
-    const {loading, sortedRooms, parks} = context;
+function ParkContainer({context}){
+    const {loading, sortedParks, parks} = context;
         if(loading){
             return <Loading />
         }
         return <>
-            <RoomFilter parks={parks} />
-            <RoomList parks={sortedRooms}/>
+            <ParkFilter parks={parks} />
+            <ParkList parks={sortedParks}/>
         </>
 }
 
-export default withRoomConsumer(RoomContainer);
+export default withParkConsumer(ParkContainer);
 
 
 

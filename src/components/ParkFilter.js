@@ -1,7 +1,7 @@
 import React from 'react'
 import {useContext} from 'react'
-import {RoomContext} from '../context'
-import Title from '../components/Title'
+import {ParkContext} from '../context'
+import Title from './Title'
 
 // get all unique values
 
@@ -11,8 +11,8 @@ const getUnique = (items, value) => {
 
 
 
-export default function RoomFilter({parks}) {
-const context = useContext(RoomContext);
+export default function ParkFilter({parks}) {
+const context = useContext(ParkContext);
 const {
     handleChange,
     type,

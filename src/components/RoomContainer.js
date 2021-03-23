@@ -5,13 +5,13 @@ import {withRoomConsumer} from '../context'
 import Loading from './Loading'
 
 function RoomContainer({context}){
-    const {loading, sortedRooms, rooms} = context;
+    const {loading, sortedRooms, parks} = context;
         if(loading){
             return <Loading />
         }
         return <>
-            <RoomFilter rooms={rooms} />
-            <RoomList rooms={sortedRooms}/>
+            <RoomFilter parks={parks} />
+            <RoomList parks={sortedRooms}/>
         </>
 }
 

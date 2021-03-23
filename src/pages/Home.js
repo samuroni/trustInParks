@@ -10,7 +10,7 @@ export default function Home() {
         <>
             <Hero> 
                 <Banner title="Discover your parks" subtitle="visit all the parks around you">
-                    <Link to="./rooms" className="btn-primary">see parks</Link>
+                    <Link to="./parks" className="btn-primary">see parks</Link>
                 </Banner>
             </Hero>
             <Services />

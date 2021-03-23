@@ -78,6 +78,14 @@ h6 {
   text-align: center;
   text-transform: uppercase;
   margin: 2rem 0;
+  min-height: calc(100vh - 66px);
+  background: url("./images/home-img.jpg") center/cover no-repeat;
+  vertical-align: middle;
+}
+
+.error-message {
+ padding-top: 18rem;
+ color: var(--mainWhite);
 }
 .empty-search {
   text-align: center;
@@ -169,7 +177,7 @@ h6 {
   justify-content: center;
 }
 .roomsHero {
-  background-image: url("./images/room-2.jpeg");
+  background-image: url("./images/parks-page-main.jpg");
   min-height: 60vh;
 }
 /* End of Hero */

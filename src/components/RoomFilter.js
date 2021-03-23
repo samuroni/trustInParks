@@ -11,7 +11,7 @@ const getUnique = (items, value) => {
 
 
 
-export default function RoomFilter({rooms}) {
+export default function RoomFilter({parks}) {
 const context = useContext(RoomContext);
 const {
     handleChange,
@@ -29,7 +29,7 @@ const {
 
 // get unique types
 
-let types = getUnique(rooms, 'type');
+let types = getUnique(parks, 'type');
 // let capacities = getUnique(rooms, 'capacity');
 
 // add all type
@@ -42,14 +42,14 @@ types = types.map((item, index) =>{
     return <option value={item} key={index}>{item}</option>
 });
 
-let people = getUnique(rooms, 'capacity');
+let people = getUnique(parks, 'capacity');
 people = people.map((item, index) => {
     return <option value={item} key={index}>{item}</option>
 })
 
     return (
         <section className='filter-container'>
-            <Title title='search rooms' />
+            <Title title='search parks' />
             <form className='filter-form'>
                 {/* select type */}
                 <div className='form-group'>

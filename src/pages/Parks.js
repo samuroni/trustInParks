@@ -5,11 +5,11 @@ import {Link} from 'react-router-dom'
 import RoomContainer from '../components/RoomContainer'
 
 
-export default function Rooms() {
+export default function Parks() {
     return (
         <>
         <Hero hero= "roomsHero">
-            <Banner title="Our Rooms">
+            <Banner title="Our Parks">
                 <Link to="./" className="btn-primary">Back to Home</Link>
             </Banner>
         </Hero>

@@ -6,7 +6,7 @@ const RoomContext = React.createContext();
 
 class RoomProvider extends Component {
     state = {
-        rooms:[],
+        parks:[],
         sortedRooms:[],
         featuredRooms:[],
         loading: true,
@@ -29,15 +29,15 @@ class RoomProvider extends Component {
                 content_type: 'parks'
                 // order: 'fields.price'
             });
-            let rooms = this.formatData(response.items);
-            let featuredRooms = rooms.filter(room => room.featured === true);
-            let maxPrice = Math.max(...rooms.map(item => item.price));
-            let maxSize = Math.max(...rooms.map(item => item.size));
+            let parks = this.formatData(response.items);
+            let featuredRooms = parks.filter(park => park.featured === true);
+            let maxPrice = Math.max(...parks.map(item => item.price));
+            let maxSize = Math.max(...parks.map(item => item.size));
         
             this.setState({
-                rooms, 
+                parks, 
                 featuredRooms, 
-                sortedRooms:rooms, 
+                sortedRooms:parks, 
                 loading:false,
                 maxSize,
                 price: maxPrice,
@@ -66,7 +66,7 @@ class RoomProvider extends Component {
     }
 
     getRoom = slug => {
-        let tempRooms = [...this.state.rooms];
+        let tempRooms = [...this.state.parks];
         const room = tempRooms.find(room => room.slug === slug);
         return room;
     };
@@ -84,7 +84,7 @@ class RoomProvider extends Component {
 
     filterRooms = () => {
         let {
-            rooms,
+            parks,
             type,
             capacity,
             price,
@@ -94,7 +94,7 @@ class RoomProvider extends Component {
             pets
         } = this.state;
 // all the rooms
-        let tempRooms= [...rooms];
+        let tempRooms= [...parks];
 // transform value
         capacity = parseInt(capacity);
         price = parseInt(price);

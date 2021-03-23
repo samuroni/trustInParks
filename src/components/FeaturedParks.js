@@ -12,9 +12,9 @@ export default class FeaturedParks extends Component {
             return <Park key={park.id} park={park}/>
         } )
         return (
-            <section className='featured-rooms'>
+            <section className='featured-parks'>
                 <Title title='featured parks'/>
-                <div className='featured-rooms-center'>
+                <div className='featured-parks-center'>
                     {loading ? <Loading /> : parks}
                 </div>
             </section>

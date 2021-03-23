@@ -8,7 +8,7 @@ import ParkContainer from '../components/ParkContainer'
 export default function Parks() {
     return (
         <>
-        <Hero hero= "roomsHero">
+        <Hero hero= "parksHero">
             <Banner title="Our Parks">
                 <Link to="./" className="btn-primary">Back to Home</Link>
             </Banner>

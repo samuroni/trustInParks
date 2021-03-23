@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import defaultBcg from '../images/room-1.jpeg'
+import defaultBcg from '../images/parks-page-main.jpg'
 import Hero from '../components/Hero'
 import Banner from '../components/Banner'
 import {Link} from 'react-router-dom'
@@ -11,7 +11,6 @@ export default class SinglePark extends Component {
     
     constructor(props){
         super(props)
-        // console.log(this.props);
         this.state = {
             slug: this.props.match.params.slug,
             defaultBcg,
@@ -26,9 +25,9 @@ export default class SinglePark extends Component {
 
     render() {
         const {getPark} = this.context;
-        const room = getPark(this.state.slug);
+        const park = getPark(this.state.slug);
         
-        if(!room){
+        if(!park){
             return <div className='error'>
                 <div className='error-message'>
                     <h3>No such park could be found.</h3>
@@ -39,7 +38,7 @@ export default class SinglePark extends Component {
             </div>
         } 
 
-        const {name, description, capacity, size, price, extras, foodAndDrink,pets, images} = room
+        const {name, description, capacity, size, price, extras, foodAndDrink,pets, images} = park
 
         const [mainImg, ...defaultImg] = images;
 
@@ -52,13 +51,13 @@ export default class SinglePark extends Component {
                         </Link>
                     </Banner>
                 </StyledHero>
-                <section className='single-room'>
-                    <div className='single-room-images'>
+                <section className='single-park'>
+                    <div className='single-park-images'>
                         {defaultImg.map((item, index) => {
                             return <img key={index} src={item} alt={name}/>
                         })}
                     </div>
-                    <div className='single-room-info'>
+                    <div className='single-park-info'>
                         <article className='desc'>
                             <h3>details</h3>
                             <p>{description}</p>
@@ -71,7 +70,7 @@ export default class SinglePark extends Component {
                         </article>
                     </div>
                 </section>
-                <section className='room-extras'>
+                <section className='park-extras'>
                     <h6>extras</h6>
                     <ul className='extras'>
                         {extras.map((item, index) => {

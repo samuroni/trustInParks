@@ -10,8 +10,8 @@ export default function ParkList({parks}) {
         );    
     }
     return (
-        <section className='roomslist'>
-            <div className='roomslist-center'>
+        <section className='parkslist'>
+            <div className='parkslist-center'>
                 {parks.map(item => {
                     return <Park key={item.id} park={item} />;
                 })}                

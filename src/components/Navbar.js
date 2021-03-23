@@ -17,7 +17,7 @@ const Navbar = () => {
                 <div className="nav-center">
                     <div className="nav-header">
                          <Link to="/" className="nav-link-parks">
-                             <img src={logo} alt="Beach Resort" className="nav-logo-parks"></img>
+                             <img src={logo} alt="Trust in Parks" className="nav-logo-parks"></img>
                          </Link>
                         <button type="button" className="nav-btn" onClick={handleToggle}>
                              <FaAlignRight className="nav-icon" />                         

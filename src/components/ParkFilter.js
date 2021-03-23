@@ -30,7 +30,7 @@ const {
 // get unique types
 
 let types = getUnique(parks, 'type');
-// let capacities = getUnique(rooms, 'capacity');
+// let capacities = getUnique(parks, 'capacity');
 
 // add all type
 
@@ -96,7 +96,7 @@ people = people.map((item, index) => {
                     />
                 </div>
                 {/* end of price range */}
-                {/* room size */}
+                {/* park size */}
                 {/* <div className='form-group'>
                     <label htmlFor='size'>
                         park size
@@ -120,7 +120,7 @@ people = people.map((item, index) => {
                         </input>
                     </div>
                 </div> */}
-                {/* end of room size */}
+                {/* end of park size */}
                 {/* extras */}
                 <div className='form-group'>
                     <div className='single-extra'>
